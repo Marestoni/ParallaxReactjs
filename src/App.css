@@ -1,38 +1,72 @@
-.App {
+body{
+  margin:0;
+  padding:0;
+  color: #242424 !important;
+  background-color: #000;
+  font-family: sans-serif;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.container{
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container, div{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.customImg{
+  height: 500px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.circleExpand{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%,-50%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.insideStyles{
+  background: white;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.effectBackground{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: 900;
+  color: rgb(255, 255, 255);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.effectBackground::after{
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  background: -moz-linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 60%, #000 100% );
+  background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 60%, #000 100% );
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 60%, #000 100% );
 }
